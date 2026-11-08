@@ -1,4 +1,11 @@
-# MCP Gateway
+docker run --rm -i \
+  -e MCP_GATEWAY_PORT=8000 \
+  -e MCP_GATEWAY_DOMAIN=localhost \
+  -e MCP_GATEWAY_AGENT_ID=your-agent-id \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /path/to/logs:/tmp/gh-aw/mcp-logs \
+  -p 8000:8000 \
+  ghcr.io/github/gh-aw-mcpg:latest < config.json# MCP Gateway
 
 A gateway for Model Context Protocol (MCP) servers.
 
